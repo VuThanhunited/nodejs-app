@@ -15,6 +15,10 @@ app.use(bodyParser.json());
 // sử dụng routes
 app.use("/api/movies", movieRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Hello from Node.js on Render!");
+});
+
 // xử lý route không tồn tại
 app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });
